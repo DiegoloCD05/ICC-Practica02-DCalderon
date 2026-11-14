@@ -19,6 +19,7 @@ Programa que simula una inversión , el usuario ingresa su monto que quiere inve
 javac SimulacionDeInversion.java
 java SimulacionDeInversion
 ```
+** algunos in.nextLine() estan ahí un poco en medio de la nada, por un error que ocurre al poner un in.nextInt, aunque no lo hemos visto lo tuve que buscar la solución en Internet por que si no, no compilaba 
 **Descripción General**
 
 En una institución bancaria se requiere hacer cierto manejo de fechas para determinar, por ejemplo, la fecha final de una inversión de dinero. Por ello el propósito de este problema es escribir una clase para crear y manejar fechas.
