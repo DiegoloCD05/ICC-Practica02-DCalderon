@@ -1,0 +1,44 @@
+import java.util.Scanner;
+/**
+* Clase para regresar la inversion generada en un tiempo de inversion 
+* @author Diego Calderon Davila 
+* @version 1a edicion
+*/
+public class TiempoDeInversion{
+
+	public static void main(String[] args){
+        String respuesta; 
+		System.out.println("Bienvenido a la simulacion de inversion ¿cual es tu nombre?");
+		Scanner in = new Scanner (System.in);
+		String nombreUsuario=in.nextLine();
+		do{
+			System.out.println("Hola "+nombreUsuario +" cuanto deseas invertir (escribe el monto sin el signo $ ni comas)");
+			double montoINV=in.nextDouble();
+			System.out.println("Ahora dame la fecha de inicio, primero dame el dia de inicio" ) ;
+			int diaI =in.nextInt();
+                        in.nextLine();
+			System.out.println("Ahora ingresa el mes de inicio (escrito)");
+			String mesI = in.nextLine();
+			System.out.println("por ultimo ingresa el anio de inicio(formato AAAA)");
+			int anioI = in.nextInt();
+			Fecha fechaI = new Fecha(diaI,mesI,anioI);
+			System.out.println("Ahora dame la fecha final, primero dame el dia final de la inversion" ) ;
+                        int diaF =in.nextInt();
+                        in.nextLine();
+                        System.out.println("Ahora ingresa el mes fina de la inversion (escrito)");
+                        String mesF = in.nextLine();
+                        System.out.println("por ultimo ingresa el anio final de la inversion (formato AAAA)");
+			int anioF = in.nextInt();
+                        in.nextLine();
+			Fecha fechaF = new Fecha(diaF,mesF,anioF);
+                        System.out.println("Tu inversion sera de "+ fechaF.difEnDias(fechaI) + " dias");
+                        int diaDif= fechaF.difEnDias(fechaI);
+                        double rendiminetoD = montoINV * 0.12;
+                        double rendimientoT = rendiminetoD * diaDif; 
+                        System.out.println("Con esto tu rendimineto al 12% sera de $"+ rendimientoT );
+                        System.out.println("¿deseas realizar otra simulacion?( responder solo con si o no)");
+                         respuesta = in.nextLine();
+		}while( respuesta.equals("si"));
+	}
+}
+
